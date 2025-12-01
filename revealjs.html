@@ -4,11 +4,11 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Cookie Slide Show</title>
 
 		<link rel="stylesheet" href="reveal.js/dist/reset.css">
 		<link rel="stylesheet" href="reveal.js/dist/reveal.css">
-		<link rel="stylesheet" href="reveal.js/dist/theme/black.css">
+		<link rel="stylesheet" href="reveal.js/dist/theme/moon.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
@@ -16,7 +16,24 @@
 	<body>
     
     <style>
-        .rounded_corners {border-radius: 15px 50px; /* two values */}
+        .rounded_corners {
+            /*border-radius: 10px 50px;*/ /* two values */;
+            border-radius: 49%;
+            box-shadow: 0 0 80px #ccc;}
+        .grayscale-transition {
+          /* Initial state: 10% grayscale */
+          filter: grayscale(10%);
+          -webkit-filter: grayscale(10%); /* For Webkit browsers like Chrome and Safari */
+          
+          /* Transition effect: changes over 2 seconds */
+          transition: filter 1s ease-in-out, -webkit-filter 1s ease-in-out;
+        }
+
+        .grayscale-transition:hover {
+          /* Final state on hover: 100% grayscale (full color) */
+          filter: grayscale(100%);
+          -webkit-filter: grayscale(100%);
+        }
     </style>
 		
         
@@ -28,19 +45,35 @@
                     <p>submitted cookie masterpieces</p>
                 </section><section>
                     Cookie: <b>2022-08-30T170331UTC auto</b>
-                     <img class="rounded_corners" src="images/2022-08-30T170331UTC_auto.jpg" alt="2022-08-30T170331UTC auto">
+                     <img class="rounded_corners grayscale-transition" src="images/2022-08-30T170331UTC_auto.jpg" alt="2022-08-30T170331UTC auto">
+                    </section>
+                <section>
+                    Cookie: <b>Aachener Printen</b>
+                     <img class="rounded_corners grayscale-transition" src="images/Aachener Printen.jpg" alt="Aachener Printen">
+                    </section>
+                <section>
+                    Cookie: <b>Aprachschegg</b>
+                     <img class="rounded_corners grayscale-transition" src="images/Aprachschegg.jpg" alt="Aprachschegg">
+                    </section>
+                <section>
+                    Cookie: <b>Müllers Lebkuchen</b>
+                     <img class="rounded_corners grayscale-transition" src="images/Müllers Lebkuchen.JPG" alt="Müllers Lebkuchen">
+                    </section>
+                <section>
+                    Cookie: <b>Polly Cookie Pointer</b>
+                     <img class="rounded_corners grayscale-transition" src="images/Polly Cookie Pointer.jpg" alt="Polly Cookie Pointer">
+                    </section>
+                <section>
+                    Cookie: <b>Shorty 2000</b>
+                     <img class="rounded_corners grayscale-transition" src="images/Shorty 2000.jpg" alt="Shorty 2000">
+                    </section>
+                <section>
+                    Cookie: <b>StreetCar Cookie</b>
+                     <img class="rounded_corners grayscale-transition" src="images/StreetCar Cookie.jpg" alt="StreetCar Cookie">
                     </section>
                 <section>
                     Cookie: <b>cv2 warpPolar</b>
-                     <img class="rounded_corners" src="images/cv2_warpPolar.jpg" alt="cv2 warpPolar">
-                    </section>
-                <section>
-                    Cookie: <b>image</b>
-                     <img class="rounded_corners" src="images/image.jpg" alt="image">
-                    </section>
-                <section>
-                    Cookie: <b>image</b>
-                     <img class="rounded_corners" src="images/image.ppp" alt="image">
+                     <img class="rounded_corners grayscale-transition" src="images/cv2_warpPolar.jpg" alt="cv2 warpPolar">
                     </section>
                 
             </div>

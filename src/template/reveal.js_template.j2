@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" href="reveal.js/dist/reset.css">
 		<link rel="stylesheet" href="reveal.js/dist/reveal.css">
-		<link rel="stylesheet" href="reveal.js/dist/theme/black.css">
+		<link rel="stylesheet" href="reveal.js/dist/theme/moon.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
@@ -16,7 +16,24 @@
 	<body>
     
     <style>
-        .rounded_corners {border-radius: 15px 50px; /* two values */}
+        .rounded_corners {
+            /*border-radius: 10px 50px;*/ /* two values */;
+            border-radius: 49%;
+            box-shadow: 0 0 80px #ccc;}
+        .grayscale-transition {
+          /* Initial state: 10% grayscale */
+          filter: grayscale(10%);
+          -webkit-filter: grayscale(10%); /* For Webkit browsers like Chrome and Safari */
+          
+          /* Transition effect: changes over 2 seconds */
+          transition: filter 1s ease-in-out, -webkit-filter 1s ease-in-out;
+        }
+
+        .grayscale-transition:hover {
+          /* Final state on hover: 100% grayscale (full color) */
+          filter: grayscale(100%);
+          -webkit-filter: grayscale(100%);
+        }
     </style>
 		
         
@@ -30,7 +47,7 @@
                 {%- for image in images -%}
                     <section>
                     Cookie: <b>{{ image.name }}</b>
-                     <img class="rounded_corners" src="images/{{ image.file_name}}" alt="{{ image.name}}">
+                     <img class="rounded_corners grayscale-transition" src="images/{{ image.file_name}}" alt="{{ image.name}}">
                     </section>
                 {% endfor %}
             </div>

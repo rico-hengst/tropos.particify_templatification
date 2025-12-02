@@ -18,7 +18,7 @@
     <style>
         .rounded_corners {
             /*border-radius: 10px 50px;*/ /* two values */;
-            border-radius: 49%;
+            border-radius: 4%;
             box-shadow: 0 0 80px #ccc;}
         .grayscale-transition {
           /* Initial state: 10% grayscale */
@@ -34,6 +34,32 @@
           filter: grayscale(100%);
           -webkit-filter: grayscale(100%);
         }
+        
+        .reveal.reveal img
+        {
+            border: none;
+            box-shadow: none;
+            max-height: calc(40vh);
+            max-width: calc(40vw);
+        }
+        
+        .button {
+          background-color: orange;
+          border: none;
+          color: white;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          border-radius: 6px;
+          box-shadow:0 8px 16px 0 rgba(0,0,0,0.6)
+          margin: 4px 2px;
+          padding: 12px 28px;
+          cursor: pointer;
+        }
+        
+        img.c {
+        vertical-align: text-bottom;
+        }
     </style>
 		
         
@@ -42,39 +68,45 @@
 			<div class="slides">
                 <section>
                     <h2>Cookie Contest @TROPOS</h2>
-                    <p>submitted cookie masterpieces</p>
+                    <p style="padding-top:40px">eingereichte BackKunstwerke //</br>submitted cookie masterpieces</p>
                 </section><section>
-                    Cookie: <b>2022-08-30T170331UTC auto</b>
+                    <p><b class="button">2022-08-30T170331UTC auto</b></p>
                      <img class="rounded_corners grayscale-transition" src="images/2022-08-30T170331UTC_auto.jpg" alt="2022-08-30T170331UTC auto">
                     </section>
                 <section>
-                    Cookie: <b>Aachener Printen</b>
+                    <p><b class="button">Aachener Printen</b></p>
                      <img class="rounded_corners grayscale-transition" src="images/Aachener Printen.jpg" alt="Aachener Printen">
                     </section>
                 <section>
-                    Cookie: <b>Aprachschegg</b>
+                    <p><b class="button">Aprachschegg</b></p>
                      <img class="rounded_corners grayscale-transition" src="images/Aprachschegg.jpg" alt="Aprachschegg">
                     </section>
                 <section>
-                    Cookie: <b>Müllers Lebkuchen</b>
+                    <p><b class="button">Müllers Lebkuchen</b></p>
                      <img class="rounded_corners grayscale-transition" src="images/Müllers Lebkuchen.JPG" alt="Müllers Lebkuchen">
                     </section>
                 <section>
-                    Cookie: <b>Polly Cookie Pointer</b>
+                    <p><b class="button">Polly Cookie Pointer</b></p>
                      <img class="rounded_corners grayscale-transition" src="images/Polly Cookie Pointer.jpg" alt="Polly Cookie Pointer">
                     </section>
                 <section>
-                    Cookie: <b>Shorty 2000</b>
+                    <p><b class="button">Shorty 2000</b></p>
                      <img class="rounded_corners grayscale-transition" src="images/Shorty 2000.jpg" alt="Shorty 2000">
                     </section>
                 <section>
-                    Cookie: <b>StreetCar Cookie</b>
+                    <p><b class="button">StreetCar Cookie</b></p>
                      <img class="rounded_corners grayscale-transition" src="images/StreetCar Cookie.jpg" alt="StreetCar Cookie">
                     </section>
                 <section>
-                    Cookie: <b>cv2 warpPolar</b>
+                    <p><b class="button">cv2 warpPolar</b></p>
                      <img class="rounded_corners grayscale-transition" src="images/cv2_warpPolar.jpg" alt="cv2 warpPolar">
                     </section>
+                
+                <section tagcloud bw>
+                    <h2>Thanks to .. <img class="c" width="100px" src="https://upload.wikimedia.org/wikipedia/commons/8/86/A_perfect_SVG_heart.svg" alt="Herz"></h2>
+                    <p style="padding-top:40px">... TeigFormBackSpezialistINNen <br>für die Bereitstellung der Cookies.</p>
+                    <p style="padding-top:40px">... dough shaping and baking specialists  <br>for providing the cookies.</p>
+                </section>
                 
             </div>
 		</div>
@@ -95,6 +127,8 @@
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+                
+
 			});
 		</script>
 	</body>

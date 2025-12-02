@@ -18,7 +18,7 @@
     <style>
         .rounded_corners {
             /*border-radius: 10px 50px;*/ /* two values */;
-            border-radius: 49%;
+            border-radius: 4%;
             box-shadow: 0 0 80px #ccc;}
         .grayscale-transition {
           /* Initial state: 10% grayscale */
@@ -34,6 +34,32 @@
           filter: grayscale(100%);
           -webkit-filter: grayscale(100%);
         }
+        
+        .reveal.reveal img
+        {
+            border: none;
+            box-shadow: none;
+            max-height: calc(40vh);
+            max-width: calc(40vw);
+        }
+        
+        .button {
+          background-color: orange;
+          border: none;
+          color: white;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          border-radius: 6px;
+          box-shadow:0 8px 16px 0 rgba(0,0,0,0.6)
+          margin: 4px 2px;
+          padding: 12px 28px;
+          cursor: pointer;
+        }
+        
+        img.c {
+        vertical-align: text-bottom;
+        }
     </style>
 		
         
@@ -42,14 +68,20 @@
 			<div class="slides">
                 <section>
                     <h2>Cookie Contest @TROPOS</h2>
-                    <p>submitted cookie masterpieces</p>
+                    <p style="padding-top:40px">eingereichte BackKunstwerke //</br>submitted cookie masterpieces</p>
                 </section>
                 {%- for image in images -%}
                     <section>
-                    Cookie: <b>{{ image.name }}</b>
+                    <p><b class="button">{{ image.name }}</b></p>
                      <img class="rounded_corners grayscale-transition" src="images/{{ image.file_name}}" alt="{{ image.name}}">
                     </section>
                 {% endfor %}
+                <section tagcloud bw>
+                    <h2>Thanks to .. <img class="c" width="100px" src="https://upload.wikimedia.org/wikipedia/commons/8/86/A_perfect_SVG_heart.svg" alt="Herz"></h2>
+                    <p style="padding-top:40px">... TeigFormBackSpezialistINNen <br>für die Bereitstellung der Cookies.</p>
+                    <p style="padding-top:40px">... dough shaping and baking specialists  <br>for providing the cookies.</p>
+                </section>
+                
             </div>
 		</div>
         
@@ -69,6 +101,8 @@
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+                
+
 			});
 		</script>
 	</body>

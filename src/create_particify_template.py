@@ -16,6 +16,7 @@ import os
 import glob
 from datetime import datetime
 from jinja2 import Template
+import re
 
 
 
@@ -93,8 +94,10 @@ def render_particify(images,particify_template, particify_out):
     rendered_form = template.render(context)
 
     # removed trailed new line after ...> ",,false,true,0
-    print(rendered_form)
-    rendered_form = rendered_form.replace("\n\",,false,true,0", "\",,false,true,0")
+    #print(rendered_form)
+    #rendered_form = rendered_form.replace('\\n\",,false,true,0', '\",,false,true,0')
+    rendered_form = re.sub(r"\n\",,false,true,0", "\",,false,true,0", rendered_form)
+
 
     # save the txt file in the form.html
     output = open(particify_out, 'w')
@@ -102,29 +105,6 @@ def render_particify(images,particify_template, particify_out):
     output.close()
 
 
-def render_particify(images,reveal_template, reveal_out):
-    if not os.path.exists(reveal_template):
-       print("The file not exists." + reveal_template)
-       exit()
-
-
-    context = {
-        "images": images
-    }
-    # Create one external form_template html page and read it
-    File = open(reveal_template, 'r')
-    content = File.read()
-    File.close()
-
-    # Render the template and pass the variables
-    template = Template(content)
-    rendered_form = template.render(context)
-    
-    # save the txt file in the form.html
-    output = open(reveal_out, 'w')
-    output.write(rendered_form)
-    output.close()
-    
     
 
 images = scan_imagedir(raw_image_dir)

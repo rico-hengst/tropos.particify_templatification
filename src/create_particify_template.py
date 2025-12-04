@@ -17,6 +17,8 @@ import glob
 from datetime import datetime
 from jinja2 import Template
 import re
+import xlwt
+import string
 
 
 
@@ -33,6 +35,8 @@ reveal_out          = exec_dir + "/../revealjs.html"
 
 
 def scan_imagedir(raw_image_dir):
+    
+    print("Scan image dir: " + raw_image_dir)
     
     # get image files
     if not os.path.exists(raw_image_dir):
@@ -68,6 +72,8 @@ def scan_imagedir(raw_image_dir):
     
 
 def render_particify(images,particify_template, particify_out):
+    
+    print("Render template: " + os.path.basename(particify_template) )
 
     #winterurlaub2011.misc@vodafonemail.de
     #12ee!!KK
@@ -105,8 +111,61 @@ def render_particify(images,particify_template, particify_out):
     output.close()
 
 
+def write_xls(images):
+
+    style0 = xlwt.easyxf('font: name Arial, color-index blue, bold on',num_format_str='#,##0.00')
+    stylebold = xlwt.easyxf('font: name Arial, bold on')
+    style1 = xlwt.easyxf(num_format_str='YYYY-MM-DD HH:MM:SS')
+
+    wb = xlwt.Workbook()
+    ws = wb.add_sheet('CC @TROPOS Results')
+
+    ws.write(0, 0, "Voting results", stylebold)
+    ws.write(1, 0, datetime.now(), style1)
+
+
+    yaxis_ofsetter = 3
+    xaxis_ofsetter = 1
+    n_questions    = 10
+    
+    # header
+    alphabet = list(string.ascii_uppercase)
+    for index_question in range(0, n_questions):
+        ix = xaxis_ofsetter + index_question
+        ws.write(yaxis_ofsetter -1, ix, "Question " + str(ix))
+    ws.write(yaxis_ofsetter -1, n_questions + 2, "Sum", stylebold)
+    ws.write(yaxis_ofsetter -1, n_questions + 4, "Image")
+    
+    # iterate vertical via cookies
+    for index_image, image in enumerate(images):
+        iy = yaxis_ofsetter + index_image
+        
+        ws.write(iy, 0, image["name"])
+        ws.write(iy, xaxis_ofsetter + n_questions + 3, image["file_name"])
+        # iterate horizontal via questions
+        #print(index_image, image["name"])
+        for index_question in range(0, n_questions):
+            ix = xaxis_ofsetter + index_question
+            
+            # write 0 to each vote
+            #ws.write(iy, ix, 4)
+            
+        # sum
+        my_func = "SUM(" + alphabet[1] + str(iy+1) + ":" + alphabet[n_questions] + str(iy+1) + ")"
+        ws.write(iy, n_questions + 2, xlwt.Formula(my_func),stylebold)
+    
+    xls_filename = "voting_evaluation.xls"
+    user_input = input("Do you want to overide existing voting evaluation file \"" + xls_filename + "\"? (yes/no): ")
+    if user_input.lower() in ["yes", "y"]:
+        print("Continuing...")
+        
+        print( "Generate evaluation template: " + xls_filename)
+        wb.save(xls_filename)
+    else:
+        print("Exiting...")
     
 
 images = scan_imagedir(raw_image_dir)
 render_particify(images,particify_template, particify_out)
 render_particify(images,reveal_template, reveal_out)
+write_xls(images)

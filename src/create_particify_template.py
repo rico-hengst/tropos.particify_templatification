@@ -83,7 +83,9 @@ def render_particify(images,particify_template, particify_out):
     if not os.path.exists(particify_template):
        print("The file not exists." + particify_template)
        exit()
-
+    
+    current_dateTime = datetime.now()
+    print(current_dateTime)
 
     context = {
         "images": images

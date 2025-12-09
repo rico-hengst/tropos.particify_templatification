@@ -5,13 +5,12 @@
 ## Pad
 https://pad.gwdg.de/6rRk_P3HRk2HYaB7ZNEaSw#
 
-## Umfrage
-* zB https://ars.particify.de/p/07459025
-* credentials zur Bearbeitung der Umfrage im Script
 
-
-## Lokale Slideshow Cookies
-* revealjs.html
+## Show
+* 
+* Voting particify: [ars.particify.de/p/07459025](https://ars.particify.de/p/07459025), credentials zur Bearbeitung der Umfrage im Script
+* Lokale Slideshow Cookies: [revealjs.html](revealjs.html)
+* Splitted Pages: [splitted_pages.html](splitted_pages.html)
 
 ## Onboarding Cookies
 * alle jpg Bilder in Ordner "images" ablegen

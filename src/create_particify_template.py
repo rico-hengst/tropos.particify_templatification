@@ -60,7 +60,7 @@ def scan_imagedir(raw_image_dir):
             print("Not a file: " + raw_image_dir + dir_content)
             
         if len(images) < 1:
-            print("No images")
+            print("No images found")
             exit()
             
             

@@ -70,18 +70,21 @@
                 <section data-autoslide="7000">
                     <h2>Cookie Contest @TROPOS</h2>
                     <img class="rounded_corners grayscale-transition" src="src/template/cookie.png" />
-                    <p style="padding-top:40px">Insgesamt <b>{{ images|length }}</b> eingereichte BackKunstwerke ...</p>
-                    <p style="padding-top:40px">In total <b>{{ images|length }}</b> submitted cookie masterpieces ...</p>
+                    <p style="padding-top:40px">Insgesamt <b>"{{ images|length }}"</b> eingereichte BackKunstwerke ...</p>
+                    <p style="padding-top:40px">In total <b>"{{ images|length }}"</b> submitted cookie masterpieces ...</p>
                 </section>
                 <section data-autoslide="7000">
                     <h3>Ablauf // Procedure</h3>
-                    <ul>
-                        <li>Geschmackstest // Taste trials</li>
-                        <li>Voting Intro</li>
-                        <li>Voting Test (Link QR-Code)</li>
-                        <li>Voting Start</li>
-                        <li>Preisverleihung // Award ceremony</li>
-                    </ul>
+                    <ol>
+                        <li>Geschmackstest // Taste trials (until 6:30 pm)</li>
+                        <li>Gemeinsames Voting, eigenes Smartphone erforderlich // Joint voting, you will need to use your smartphone (around 8 pm)
+                            <ul>
+                                <li>Voting Intro </li>
+                                <li>Voting Start</li>
+                                <li>Preisverleihung // Award ceremony</li>
+                            </ul>
+                        </li>
+                    </ol>
                 </section>
                 {%- for image in images -%}
                     <section>

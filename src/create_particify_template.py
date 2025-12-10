@@ -88,7 +88,8 @@ def render_particify(images,particify_template, particify_out):
     print(current_dateTime)
 
     context = {
-        "images": images
+        "images": images,
+        "date":datetime.now()
     }
 
 

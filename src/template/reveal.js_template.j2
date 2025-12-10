@@ -61,6 +61,14 @@
         img.c {
         vertical-align: text-bottom;
         }
+        
+        .attribution {
+        position: absolute;
+        /*padding-top: 80vh !important;*/
+        bottom: -30%;
+        left: 70%;
+        font-size: 0.33em !important;
+    }
     </style>
 		
         
@@ -68,10 +76,11 @@
         <div class="reveal">
 			<div class="slides">
                 <section data-autoslide="7000">
-                    <h2>Cookie Contest @TROPOS</h2>
+                    <h2>Cookie Contest </br>@TROPOS </h2>
                     <img class="rounded_corners grayscale-transition" src="src/template/cookie.png" />
                     <p style="padding-top:40px">Insgesamt <b>"{{ images|length }}"</b> eingereichte BackKunstwerke ...</p>
                     <p style="padding-top:40px">In total <b>"{{ images|length }}"</b> submitted cookie masterpieces ...</p>
+                    <p class="attribution">Last update: {{ date.strftime('%Y-%m-%d %H:%M:%S') }}</p>
                 </section>
                 <section data-autoslide="7000">
                     <h3>Ablauf // Procedure</h3>
@@ -85,6 +94,7 @@
                             </ul>
                         </li>
                     </ol>
+                    
                 </section>
                 {%- for image in images -%}
                     <section>

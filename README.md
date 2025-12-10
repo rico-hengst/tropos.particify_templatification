@@ -17,13 +17,14 @@ https://pad.gwdg.de/6rRk_P3HRk2HYaB7ZNEaSw#
 * nur ein Bild pro Cookie
 * Dateiname = Name die Cookies
 * White Space in Dateiname ok
-* Bilddatei im Querformat 3:2 oder 1:1, größte Seitenlänge 1550px
+* Bilddatei im Querformat 6:5 oder 1:1, größte Seitenlänge 800px
 * Bildbearbeitung via gimp
 
 ## Slideshow und Umfragetemplate
 * script src/create_particify_template.py ausführen
-* Slidshow revealjs.html wird neu geschrieben, ggfalls Brwoserrefresh
+* Slidshow revealjs.html wird neu geschrieben, ggfalls Browserrefresh
 * Umfragetemplate wird in /html/particify_<>.csv geschrieben
+* Votingliste wird geschrieben um Ergebnisse einzutragen: voting_evaluation.xls
 * Neue Umfrage erstellen:
     * erstellen einer neuen Umfrage ... Survey klicken https://ars.particify.de/edit/07459025
     * Name der Umfrage eingeben

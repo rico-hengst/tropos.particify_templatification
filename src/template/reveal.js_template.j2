@@ -40,8 +40,8 @@
         {
             border: none;
             box-shadow: none;
-            max-height: calc(85vh);
-            max-width: calc(85vw);
+            max-height: calc(80vh);
+            max-width: calc(80vw);
         }
         
         .button {
@@ -85,7 +85,7 @@
                     <img class="rounded_corners grayscale-transition" src="src/template/cookie.png" />
                     <p style="padding-top:40px">Insgesamt <b>"{{ images|length }}"</b> eingereichte BackKunstwerke ...</p>
                     <p style="padding-top:40px">In total <b>"{{ images|length }}"</b> submitted cookie masterpieces ...</p>
-                    <p class="attribution">Last update: {{ date.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+                    <p class="attribution"><a href="?print-pdf" style="color:whites">Last update: {{ date.strftime('%Y-%m-%d %H:%M:%S') }}</a></p>
                 </section>
                 <section data-autoslide="7000">
                     <h3>Ablauf // Procedure</h3>
@@ -139,5 +139,13 @@
 
 			});
 		</script>
+        
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
 	</body>
 </html>
